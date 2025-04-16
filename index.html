@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tester Manualny – Twoja Gwarancja Jakości</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #005792;
+      color: #fff;
+      padding: 2rem 0;
+      text-align: center;
+      background-image: url('https://images.unsplash.com/photo-1581090700227-4c4c2a2434b5');
+      background-size: cover;
+      background-position: center;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    }
+    nav {
+      background: #003f63;
+      text-align: center;
+      padding: 0.5rem 0;
+    }
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .tabs {
+      display: flex;
+      justify-content: space-around;
+      border-bottom: 2px solid #ccc;
+      margin-bottom: 1rem;
+    }
+    .tabs a {
+      padding: 10px 15px;
+      text-decoration: none;
+      color: #005792;
+      font-weight: bold;
+    }
+    .tabs a:hover {
+      background: #e6f0fa;
+    }
+    .tabs a.active {
+      background: #005792;
+      color: white;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #005792;
+      color: white;
+      margin-top: 2rem;
+    }
+  </style>
+  <script>
+    function showTab(tabId) {
+      const contents = document.querySelectorAll('.tab-content');
+      contents.forEach(content => {
+        content.classList.remove('active');
+      });
+      document.getElementById(tabId).classList.add('active');
+
+      const tabs = document.querySelectorAll('.tabs a');
+      tabs.forEach(tab => {
+        tab.classList.remove('active');
+      });
+      document.querySelector(`.tabs a[href="#${tabId}"]`).classList.add('active');
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Tester Manualny – Twoja Gwarancja Jakości</h1>
+  </header>
+
+  <nav>
+    <a href="#main">O mnie</a>
+    <a href="#contact">Kontakt</a>
+    <a href="#tests">Techniki Testów</a>
+  </nav>
+
+  <div class="container" id="main">
+    <p>Cześć! Nazywam się Przemek i jestem doświadczonym testerem manualnym. Specjalizuję się w testach funkcjonalnych, eksploracyjnych oraz regresyjnych. Dbam o to, by Twój produkt był najwyższej jakości i wolny od błędów.</p>
+  </div>
+
+  <div class="container" id="tests">
+    <h2>Techniki Testów</h2>
+    <div class="tabs">
+      <a href="#sat" class="active" onclick="showTab('sat')">Testy SAT</a>
+      <a href="#uat" onclick="showTab('uat')">Testy UAT</a>
+      <a href="#performance" onclick="showTab('performance')">Testy Wydajnościowe</a>
+      <a href="#regression" onclick="showTab('regression')">Testy Regresyjne</a>
+    </div>
+
+    <div id="sat" class="tab-content active">
+      <h3>Testy SAT (System Acceptance Testing)</h3>
+      <p>Testy SAT są przeprowadzane, aby upewnić się, że system spełnia wymagania klienta i jest gotowy do wdrożenia. Celem testu jest zapewnienie, że system działa zgodnie z wymaganiami użytkownika i spełnia wymagania jakościowe.</p>
+    </div>
+
+    <div id="uat" class="tab-content">
+      <h3>Testy UAT (User Acceptance Testing)</h3>
+      <p>Testy UAT polegają na sprawdzeniu, czy system spełnia oczekiwania użytkowników końcowych. Testy te wykonywane są przez użytkowników końcowych w celu potwierdzenia, że system jest gotowy do wdrożenia na rynku.</p>
+    </div>
+
+    <div id="performance" class="tab-content">
+      <h3>Testy Wydajnościowe (Performance Testing)</h3>
+      <p>Testy wydajnościowe są używane do określenia wydajności systemu w warunkach dużego obciążenia. Mają na celu sprawdzenie, jak system radzi sobie z dużą ilością użytkowników i czy zachowuje optymalną szybkość i stabilność działania.</p>
+    </div>
+
+    <div id="regression" class="tab-content">
+      <h3>Testy Regresyjne</h3>
+      <p>Testy regresyjne mają na celu upewnienie się, że zmiany w systemie (np. nowe funkcje, poprawki) nie wprowadziły nowych błędów i nie wpłynęły negatywnie na wcześniej działające funkcjonalności.</p>
+    </div>
+  </div>
+
+  <div class="container" id="contact">
+    <h2>Skontaktuj się ze mną</h2>
+    <p>Chcesz ze mną współpracować? Skontaktuj się mailowo lub przez formularz kontaktowy:</p>
+    <ul>
+      <li>Email: <a href="mailto:przemek.qa@example.com">przemek.qa@example.com</a></li>
+      <li>Telefon: +48 123 456 789</li>
+    </ul>
+    <form>
+      <label for="name">Imię:</label><br>
+      <input type="text" id="name" name="name"><br><br>
+
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email"><br><br>
+
+      <label for="message">Wiadomość:</label><br>
+      <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
+
+      <input type="submit" value="Wyślij">
+    </form>
+  </div>
+
+  <footer>
+    &copy; 2025 Przemek – Tester Manualny. Wszelkie prawa zastrzeżone.
+  </footer>
+</body>
+</html>
